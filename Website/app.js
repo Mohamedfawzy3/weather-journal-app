@@ -3,7 +3,7 @@ let dat = new Date();
 let newDate = dat.getMonth() + '.' + dat.getDate() + '.' + dat.getFullYear();
 
 // Personal API Key for OpenWeatherMap API
-const appID = '1a09117c381d7902dc386c387ce1ec07';
+const keyWord = '1a09117c381d7902dc386c387ce1ec07';
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 
 
@@ -17,7 +17,7 @@ function result() {
   const zip= document.getElementById('zip').value;
   const userResponse = document.getElementById('feelings').value;
 
-  getWeatherData(baseURL, zip, appID)
+  getWeatherData(baseURL, zip, keyWord)
     .then(function(data) {
       let date = new Date(data.dt * 1000)
       let date_str = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -27,7 +27,7 @@ function result() {
 };
 
 
-const WeatherData = async (baseURL, zip, appID) => {
+const WeatherData = async (baseURL, zip, keyWord) => {
   const response= await fetch(baseURL + zipCode + '&appid=' + ID + '&units=imperial');
   try {
     const data = await response.json();
