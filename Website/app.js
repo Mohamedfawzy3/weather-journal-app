@@ -28,7 +28,7 @@ function result() {
 
 
 const getWeatherData = async (baseURL, zip, keyWord) => {
-  const response= await fetch(baseURL + zipCode + '&appid=' + ID + '&units=imperial');
+  const response= await fetch(baseURL + zipCode + '&appid=' + keyWord + '&units=imperial');
   try {
     const data = await response.json();
     return data;
