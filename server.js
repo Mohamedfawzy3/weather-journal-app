@@ -1,4 +1,4 @@
-let Data = {};
+let projectData = {};
 
 // Require Express to run server
 const express = require('express');
@@ -24,12 +24,12 @@ function addData(request, response) {
   projectData["date"] = request.body.date;
   projectData["temp"] = request.body.temp;
   projectData["content"] = request.body.content;
-  response.send(Data);
+  response.send(projectData);
 }
 
 // Callback function to complete GET '/all'
 App.get('/all', getData);
 
 function getData(request, response) {
-  response.send(Data);
+  response.send(projectData);
 }
